@@ -1,0 +1,83 @@
+﻿<Window x:Class="WPF_Calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Calculator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="528.666" Width="525" Loaded="Window_Loaded">
+    <UniformGrid Rows="1" Columns="2">
+        <GroupBox Header="Attack" Margin="2 0 0 2">
+            <Grid Margin="0,0,-2,-1">
+                <Label Content="Attack:" Margin="10,10,0,0" Height="29" VerticalAlignment="Top" HorizontalAlignment="Left" Width="46"/>
+                <ComboBox x:Name="ComboBox1" Margin="61,10,10,0" VerticalAlignment="Top" Height="29" SelectionChanged="ComboBox1_SelectionChanged"/>
+                <Label Content="Power" HorizontalAlignment="Left" Margin="18,75,0,0" VerticalAlignment="Top" Width="45"/>
+                <TextBox x:Name="txtPwr" HorizontalAlignment="Left" Height="23" Margin="63,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+                <TextBox x:Name="txtPp" HorizontalAlignment="Left" Height="23" Margin="63,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+                <TextBox x:Name="txtAcc" HorizontalAlignment="Left" Height="23" Margin="63,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+                <TextBox x:Name="txtType" HorizontalAlignment="Left" Height="23" Margin="63,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+                <Label Content="PP" HorizontalAlignment="Left" Margin="20,106,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="lblAcc" Content="Accuracy" HorizontalAlignment="Left" Margin="6,131,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="lblType" Content="Type" HorizontalAlignment="Left" Margin="20,159,0,0" VerticalAlignment="Top"/>
+                <Button Content="Attack!" HorizontalAlignment="Left" Margin="20,215,0,0" VerticalAlignment="Top" Width="216" Height="41" Click="Button_Click_1"/>
+                <Label x:Name="lblDamage" Content="Damage" HorizontalAlignment="Left" Margin="25,261,0,0" VerticalAlignment="Top"/>
+                <Image x:Name="pkm_img" HorizontalAlignment="Left" Height="173" Margin="25,292,0,0" VerticalAlignment="Top" Width="211"/>
+            </Grid>
+
+        </GroupBox>
+        <GroupBox Header="Pocket Monster" Margin="0 0 2 2">
+            <Grid HorizontalAlignment="Left" Height="476" Margin="0,0,-2,-2" VerticalAlignment="Top" Width="246">
+                <Label Content="Name" HorizontalAlignment="Left" Margin="16,58,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="23" Margin="58,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" IsReadOnly="True"/>
+                <Label Content="HP" HorizontalAlignment="Left" Margin="28,137,0,0" VerticalAlignment="Top" Height="23"/>
+                <TextBox x:Name="txtHp" HorizontalAlignment="Left" Height="19" Margin="58,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61"/>
+                <Label Content="Attack" HorizontalAlignment="Left" Margin="15,162,0,0" VerticalAlignment="Top" Height="23"/>
+                <TextBox x:Name="txtAtk" HorizontalAlignment="Left" Height="19" Margin="58,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61"/>
+                <ComboBox x:Name="ComboBox2" HorizontalAlignment="Left" Margin="65,28,0,0" VerticalAlignment="Top" Width="176" Height="29" SelectionChanged="ComboBox_SelectionChanged_1"/>
+                <Label Content="Pokemon" HorizontalAlignment="Left" Margin="5,28,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="gen12" Content="I&amp;II" HorizontalAlignment="Left" Margin="81,8,0,0" VerticalAlignment="Top" GroupName="generation" IsChecked="True" Checked="gen12_Checked"/>
+                <RadioButton x:Name="gen3up" Content="III+" HorizontalAlignment="Left" Margin="124,8,0,0" VerticalAlignment="Top" GroupName="generation" Checked="gen3up_Checked"/>
+                <Label Content="Generations" HorizontalAlignment="Left" Margin="5,2,0,0" VerticalAlignment="Top"/>
+                <Label Content="Defense" HorizontalAlignment="Left" Margin="5,183,0,0" VerticalAlignment="Top" Height="23"/>
+                <Label Content="Speed" HorizontalAlignment="Left" Margin="16,207,0,0" VerticalAlignment="Top" Height="25"/>
+                <Label Content="Special" HorizontalAlignment="Left" Margin="12,233,0,0" VerticalAlignment="Top" Height="26"/>
+                <TextBox x:Name="txtDef" HorizontalAlignment="Left" Height="20" Margin="58,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61"/>
+                <TextBox x:Name="txtSpd" HorizontalAlignment="Left" Height="20" Margin="58,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61"/>
+                <TextBox x:Name="txtSpc" HorizontalAlignment="Left" Height="19" Margin="58,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61"/>
+                <Label Content="HP" HorizontalAlignment="Left" Margin="150,137,0,0" VerticalAlignment="Top" Height="23"/>
+                <TextBox x:Name="txtHp_ev" HorizontalAlignment="Left" Height="19" Margin="180,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61"/>
+                <Label Content="Attack" HorizontalAlignment="Left" Margin="137,162,0,0" VerticalAlignment="Top" Height="23"/>
+                <TextBox x:Name="txtAtk_ev" HorizontalAlignment="Left" Height="19" Margin="180,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61"/>
+                <Label Content="Defense" HorizontalAlignment="Left" Margin="127,183,0,0" VerticalAlignment="Top" Height="23"/>
+                <Label Content="Speed" HorizontalAlignment="Left" Margin="138,207,0,0" VerticalAlignment="Top" Height="25"/>
+                <Label Content="Special" HorizontalAlignment="Left" Margin="134,233,0,0" VerticalAlignment="Top" Height="26"/>
+                <TextBox x:Name="txtDef_ev" HorizontalAlignment="Left" Height="20" Margin="180,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61"/>
+                <TextBox x:Name="txtSpd_ev" HorizontalAlignment="Left" Height="20" Margin="180,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61"/>
+                <TextBox x:Name="txtSpc_ev" HorizontalAlignment="Left" Height="19" Margin="180,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61"/>
+                <Label Content="IVs" HorizontalAlignment="Left" Margin="54,116,0,0" VerticalAlignment="Top" Height="23"/>
+                <Label Content="EVs" HorizontalAlignment="Left" Margin="175,116,0,0" VerticalAlignment="Top" Height="23"/>
+                <Label Content="HP" HorizontalAlignment="Left" Margin="21,307,0,0" VerticalAlignment="Top" Width="37" Height="24"/>
+                <TextBox x:Name="txtHp_stat" HorizontalAlignment="Left" Height="21" Margin="65,311,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" IsReadOnly="True"/>
+                <Label Content="Attack" HorizontalAlignment="Left" Margin="11,334,0,0" VerticalAlignment="Top" Width="47" Height="23"/>
+                <TextBox x:Name="txtAtk_stat" HorizontalAlignment="Left" Height="20" Margin="65,338,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" IsReadOnly="True"/>
+                <Label Content="Defense" HorizontalAlignment="Left" Margin="9,359,0,0" VerticalAlignment="Top" Width="56" Height="23"/>
+                <Label Content="Speed" HorizontalAlignment="Left" Margin="13,387,0,0" VerticalAlignment="Top" Width="47" Height="24"/>
+                <Label Content="Special" HorizontalAlignment="Left" Margin="12,414,0,0" VerticalAlignment="Top" Width="53" Height="26"/>
+                <TextBox x:Name="txtDef_stat" HorizontalAlignment="Left" Height="20" Margin="65,363,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" IsReadOnly="True"/>
+                <TextBox x:Name="txtSpd_stat" HorizontalAlignment="Left" Height="20" Margin="65,391,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" IsReadOnly="True"/>
+                <TextBox x:Name="txtSpc_stat" HorizontalAlignment="Left" Height="21" Margin="65,418,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" IsReadOnly="True"/>
+                <Label Content="Stats" HorizontalAlignment="Left" Margin="107,284,0,0" VerticalAlignment="Top" Width="51" Height="24"/>
+                <Label Content="Level" HorizontalAlignment="Left" Margin="20,89,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="txtBox_level" HorizontalAlignment="Left" Height="23" Margin="58,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183"/>
+                <Button Content="Refresh" HorizontalAlignment="Left" Margin="166,5,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+                <Label x:Name="lblSpcDef_stat" Content="Spc. Def" HorizontalAlignment="Left" Margin="5,439,0,0" VerticalAlignment="Top" Width="55" IsEnabled="False" Visibility="Hidden"/>
+                <TextBox x:Name="txtSpcDef_stat" HorizontalAlignment="Left" Height="23" Margin="65,443,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="176" IsEnabled="False" Visibility="Hidden"/>
+                <Label x:Name="lblSpcDef" Content="Spc. Def" HorizontalAlignment="Left" Margin="4,254,0,0" VerticalAlignment="Top" Height="26" IsEnabled="False" Visibility="Hidden"/>
+                <TextBox x:Name="txtSpcDef" HorizontalAlignment="Left" Height="19" Margin="58,258,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="61" IsEnabled="False" Visibility="Hidden"/>
+                <Label x:Name="lblSpcDef_ev" Content="Spc. Def" HorizontalAlignment="Left" Margin="127,254,0,0" VerticalAlignment="Top" Height="26" IsEnabled="False" Visibility="Hidden"/>
+                <TextBox x:Name="txtSpcDef_ev" HorizontalAlignment="Left" Height="19" Margin="180,258,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="61" IsEnabled="False" Visibility="Hidden"/>
+            </Grid>
+        </GroupBox>
+
+    </UniformGrid>
+</Window>
