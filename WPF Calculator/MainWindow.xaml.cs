@@ -223,7 +223,17 @@ namespace WPF_Calculator
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            if(int.TryParse(txtPwr.Text, out int blah))
+            if(!int.TryParse(txtBox_level.Text, out int blah))
+                MessageBox.Show("Level has an incorrect value","Error");
+            if (!int.TryParse(txtHp_ev.Text, out int gg))
+                MessageBox.Show("HP EV has an incorrect value", "Error");
+            if (!int.TryParse(txtDef_ev.Text, out int blgah))
+                MessageBox.Show("Defence EV has an incorrect value", "Error");
+            if (!int.TryParse(txtAtk_ev.Text, out int sss))
+                MessageBox.Show("Attack EV has an incorrect value", "Error");
+            if (!int.TryParse(txtSpd_ev.Text, out int kkk))
+                MessageBox.Show("Speed EV has an incorrect value", "Error");
+            if (int.TryParse(txtPwr.Text, out int rrr))
             {
                 int damage = (((((((2 * int.Parse(txtBox_level.Text)) / 5) + 2) * int.Parse(txtPwr.Text) * int.Parse(txtAtk_stat.Text) / int.Parse(txtDef_stat.Text)) / 50) + 2) * 1);
                 lblDamage.Content = "Damage: " + damage.ToString();
